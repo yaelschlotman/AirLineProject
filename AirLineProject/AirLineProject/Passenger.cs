@@ -11,5 +11,6 @@ namespace AirLineProject
         string Name;
         string SeatAssignment;
         Flight Flight;
+
     }
 }

@@ -12,5 +12,7 @@ namespace AirLineProject
         int Range;
         bool MaintinanceStatus;
         List<Flight> Schedule; 
+
+
     }
 }
