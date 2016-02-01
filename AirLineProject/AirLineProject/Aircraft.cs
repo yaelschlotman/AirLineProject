@@ -11,8 +11,16 @@ namespace AirLineProject
         int Capacity;
         int Range;
         bool MaintinanceStatus;
-        List<Flight> Schedule; 
+        List<Flight> Schedule;
 
+        public Aircraft(int capacity, int range, bool maintenanceStatus)
+        {
+            this.Capacity = capacity;
+            this.Range = range;
+            this.MaintinanceStatus = maintenanceStatus;
+            Schedule = new List<Flight>();
+
+        }
 
     }
 }
