@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirLineProject
 {
-    class Flight
+    public class Flight
     {
         Aircraft Aircraft;
         int FlightNumber;
