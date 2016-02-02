@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace AirLineProject
 {
-    class Passenger
+    public class AirLineViewModel : INotifyPropertyChanged
     {
-        string Name;
-        string SeatAssignment;
-        Flight Flight;
-
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
