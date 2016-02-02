@@ -8,11 +8,8 @@ namespace AirLineProject
 {
     public class SeatingChart
     {
-
-
         public List<Seat> SeatList = new List<Seat>();
         public List<string> SeatLetters = new List<string>();
-
 
         public void AddLettersToSeatList()
         {
@@ -23,13 +20,9 @@ namespace AirLineProject
             SeatLetters.Add("E");
             SeatLetters.Add("F");
         }        
-
-
         public SeatingChart(int numberofrows, int rowwidth)
         {
-
             AddLettersToSeatList();
-
             for (int i = 1; i <= numberofrows; i++)
             {
                 for (int x = 0; x < rowwidth; x++)
