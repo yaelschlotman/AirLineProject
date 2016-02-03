@@ -55,6 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\FileReader.cs" />
+    <Compile Include="Model\FileWriter.cs" />
     <Compile Include="ViewModel\Database.cs" />
     <Compile Include="ViewModel\Fleet.cs" />
     <Compile Include="SampleData\Prices\Prices.xaml.cs">
@@ -128,8 +130,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
     <Folder Include="SampleData\SampleDataSource1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Model\PassengerInfo.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
