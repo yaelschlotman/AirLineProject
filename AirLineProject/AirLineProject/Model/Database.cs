@@ -23,7 +23,7 @@ namespace AirLineProject.Model
         {
             Fleet.Add(new Aircraft(capacity, range, maintstatus));
         }
-        public void NewFlight(Aircraft aircraft,int flightnumber, string origin, string destination)
+        public void NewFlight(Aircraft aircraft, int flightnumber, string origin, string destination)
         {
             if (aircraft.MaintinanceStatus == false)
             {
