@@ -8,10 +8,10 @@ namespace AirLineProject
 {
     public class Aircraft
     {
-        int Capacity;
-        int Range;
-        bool MaintinanceStatus;
-        List<Flight> Schedule;
+        public int Capacity;
+        public int Range;
+        public bool MaintinanceStatus;
+        public List<Flight> Schedule;
 
         public Aircraft(int capacity, int range, bool maintenanceStatus)
         {

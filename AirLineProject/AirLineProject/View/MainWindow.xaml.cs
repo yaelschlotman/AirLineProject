@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AirLineProject.Model;
+using AirLineProject;
+using System.Xaml;
+
 
 namespace AirLineProject
 {
@@ -23,6 +27,11 @@ namespace AirLineProject
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

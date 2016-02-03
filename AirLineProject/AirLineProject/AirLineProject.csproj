@@ -55,9 +55,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\Database.cs" />
+    <Compile Include="SampleData\Prices\Prices.xaml.cs">
+      <DependentUpon>Prices.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\SampleDataSource\SampleDataSource.xaml.cs">
+      <DependentUpon>SampleDataSource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\SeatsSample\SeatsSample.xaml.cs">
+      <DependentUpon>SeatsSample.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\AirLineViewModel.cs" />
     <Compile Include="Model\Seat.cs" />
     <Compile Include="Model\SeatingChart.cs" />
+    <Page Include="SampleData\Prices\Prices.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\SampleDataSource\SampleDataSource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleData\SeatsSample\SeatsSample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -69,7 +91,6 @@
     </Compile>
     <Compile Include="Model\Flight.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -98,9 +119,15 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="SampleData\Prices\Prices.xsd" />
+    <None Include="SampleData\SampleDataSource\SampleDataSource.xsd" />
+    <None Include="SampleData\SeatsSample\SeatsSample.xsd" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SampleData\SampleDataSource1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AirLineProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="344" Width="525">
     <Window.Resources>
         <ItemsPanelTemplate x:Key="WrapFlightList">
-            <WrapPanel Orientation="Vertical"/>
+            <WrapPanel Orientation="Horizontal" ItemHeight="60" ItemWidth="60"/>
         </ItemsPanelTemplate>
         <SolidColorBrush x:Key="ListBox.Static.Background" Color="#FFFFFFFF"/>
         <SolidColorBrush x:Key="ListBox.Static.Border" Color="#FFABADB3"/>
@@ -29,7 +29,11 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ListBox}">
                         <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="1" SnapsToDevicePixels="true">
-                            <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" d:LayoutOverrides="Width" Margin="0,0,0,-153.203"/>
+                            <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" d:LayoutOverrides="Width" Margin="0,0,0,-153.203">
+                                <ItemsPresenter.BindingGroup>
+                                    <BindingGroup/>
+                                </ItemsPresenter.BindingGroup>
+                            </ItemsPresenter>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsEnabled" Value="false">
@@ -51,9 +55,193 @@
         <DataTemplate x:Key="DataTemplate1">
             <Grid/>
         </DataTemplate>
+        <DataTemplate x:Key="Flight_DataItemTemplate">
+            <StackPanel>
+                <TextBlock Text="{Binding Destination}"/>
+                <TextBlock Text="{Binding Flight_Number}"/>
+                <TextBlock Text="{Binding Origin}"/>
+            </StackPanel>
+        </DataTemplate>
+        <ItemsPanelTemplate x:Key="ItemsPanelTemplate1">
+            <WrapPanel DataContext="{Binding}"/>
+        </ItemsPanelTemplate>
+        <DataTemplate x:Key="ItemTemplate">
+            <StackPanel>
+                <TextBlock Text="{Binding Property1}"/>
+                <TextBlock Text="{Binding Property2}"/>
+            </StackPanel>
+        </DataTemplate>
+        <Style x:Key="ListBoxStyle2" TargetType="{x:Type ListBox}">
+            <Setter Property="Background" Value="{StaticResource ListBox.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ListBox.Static.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBox}">
+                        <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="1" SnapsToDevicePixels="true">
+                            <ItemsPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="Bd" Value="{StaticResource ListBox.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ListBox.Disabled.Border}"/>
+                            </Trigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsGrouping" Value="true"/>
+                                    <Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="false"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                            </MultiTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="RadioButton.Static.Background" Color="#FFFFFFFF"/>
+        <SolidColorBrush x:Key="RadioButton.Static.Border" Color="#FF707070"/>
+        <Style x:Key="OptionMarkFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="14,0,0,0" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="RadioButton.MouseOver.Background" Color="#FFF3F9FF"/>
+        <SolidColorBrush x:Key="RadioButton.MouseOver.Border" Color="#FF5593FF"/>
+        <SolidColorBrush x:Key="RadioButton.MouseOver.Glyph" Color="#FF212121"/>
+        <SolidColorBrush x:Key="RadioButton.Disabled.Background" Color="#FFE6E6E6"/>
+        <SolidColorBrush x:Key="RadioButton.Disabled.Border" Color="#FFBCBCBC"/>
+        <SolidColorBrush x:Key="RadioButton.Disabled.Glyph" Color="#FF707070"/>
+        <SolidColorBrush x:Key="RadioButton.Pressed.Background" Color="#FFD9ECFF"/>
+        <SolidColorBrush x:Key="RadioButton.Pressed.Border" Color="#FF3C77DD"/>
+        <SolidColorBrush x:Key="RadioButton.Pressed.Glyph" Color="#FF212121"/>
+        <SolidColorBrush x:Key="RadioButton.Static.Glyph" Color="#FF212121"/>
+        <Style x:Key="RadioButtonStyle1" TargetType="{x:Type RadioButton}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource RadioButton.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource RadioButton.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RadioButton}">
+                        <Grid x:Name="templateRoot" Background="Transparent" SnapsToDevicePixels="True">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border x:Name="radioButtonBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="100" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="1,1,2,1" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                <Grid x:Name="markGrid" Margin="2">
+                                    <Ellipse x:Name="optionMark" Fill="{StaticResource RadioButton.Static.Glyph}" MinWidth="6" MinHeight="6" Opacity="0"/>
+                                </Grid>
+                            </Border>
+                            <ContentPresenter x:Name="contentPresenter" Grid.Column="1" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="HasContent" Value="true">
+                                <Setter Property="FocusVisualStyle" Value="{StaticResource OptionMarkFocusVisual}"/>
+                                <Setter Property="Padding" Value="4,-1,0,0"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="radioButtonBorder" Value="{StaticResource RadioButton.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="radioButtonBorder" Value="{StaticResource RadioButton.MouseOver.Border}"/>
+                                <Setter Property="Fill" TargetName="optionMark" Value="{StaticResource RadioButton.MouseOver.Glyph}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="radioButtonBorder" Value="{StaticResource RadioButton.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="radioButtonBorder" Value="{StaticResource RadioButton.Disabled.Border}"/>
+                                <Setter Property="Fill" TargetName="optionMark" Value="{StaticResource RadioButton.Disabled.Glyph}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="radioButtonBorder" Value="{StaticResource RadioButton.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="radioButtonBorder" Value="{StaticResource RadioButton.Pressed.Border}"/>
+                                <Setter Property="Fill" TargetName="optionMark" Value="{StaticResource RadioButton.Pressed.Glyph}"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter Property="Opacity" TargetName="optionMark" Value="1"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="{x:Null}">
+                                <Setter Property="Opacity" TargetName="optionMark" Value="0.56"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <DataTemplate x:Key="ItemTemplate1">
+            <StackPanel>
+                <TextBlock Text="{Binding Property1}"/>
+            </StackPanel>
+        </DataTemplate>
+        <ItemsPanelTemplate x:Key="ItemsPanelTemplate2">
+            <WrapPanel Orientation="Vertical" ItemHeight="50" ItemWidth="65"/>
+        </ItemsPanelTemplate>
+        <Style x:Key="ListBoxStyle3" TargetType="{x:Type ListBox}">
+            <Setter Property="Background" Value="{StaticResource ListBox.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ListBox.Static.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBox}">
+                        <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="1" SnapsToDevicePixels="true">
+                            <ItemsPresenter Margin="0,0,0,-24" Height="Auto"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="Bd" Value="{StaticResource ListBox.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ListBox.Disabled.Border}"/>
+                            </Trigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsGrouping" Value="true"/>
+                                    <Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="false"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                            </MultiTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
-    <Grid>
-        <ListBox x:Name="listBox" HorizontalAlignment="Left" Width="224.555" RenderTransformOrigin="-0.374,-0.162" ItemsPanel="{DynamicResource WrapFlightList}" Style="{DynamicResource ListBoxStyle1}" ItemTemplate="{DynamicResource DataTemplate1}"/>
+    <Grid d:DataContext="{d:DesignData /SampleData/FlightSampleData.xaml}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="218*"/>
+            <ColumnDefinition Width="37*"/>
+            <ColumnDefinition Width="72*"/>
+            <ColumnDefinition Width="190*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="listBox" RenderTransformOrigin="-0.374,-0.162" ItemsPanel="{DynamicResource WrapFlightList}" Style="{DynamicResource ListBoxStyle1}" ItemTemplate="{DynamicResource Flight_DataItemTemplate}" Margin="0,0,85.271,0" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" d:DataContext="{Binding Mode=OneWay, Source={StaticResource SampleDataSource}, XPath=Flight_Data.Count}" ItemsSource="{Binding Flight_Data, Source={StaticResource SampleDataSource}}" SelectionChanged="listBox_SelectionChanged"/>
+        <ListBox x:Name="listBox1" Grid.Column="1" Margin="-80.271,0,-31,0" ItemsPanel="{DynamicResource ItemsPanelTemplate1}" DataContext="{Binding Source={StaticResource SeatsSample}}" ItemTemplate="{DynamicResource ItemTemplate}" ItemsSource="{Binding Collection}" Style="{DynamicResource ListBoxStyle2}" d:LayoutOverrides="TopMargin, BottomMargin" Height="313" Width="148"/>
+        <TextBox x:Name="textBox" Grid.Column="3" Height="23" Margin="36,0,34,49" TextWrapping="Wrap" Text="Customer Name" VerticalAlignment="Bottom"/>
+        <Button x:Name="button" Content="Purchase" Grid.Column="3" Margin="58,0,57,10" VerticalAlignment="Bottom"/>
+        <ListBox x:Name="listBox2" Grid.Column="3" Margin="36,40,44,118" DataContext="{Binding Source={StaticResource Prices}}" ItemTemplate="{DynamicResource ItemTemplate1}" ItemsSource="{Binding Collection}" ItemsPanel="{DynamicResource ItemsPanelTemplate2}" Style="{DynamicResource ListBoxStyle3}"/>
 
     </Grid>
 </Window>
