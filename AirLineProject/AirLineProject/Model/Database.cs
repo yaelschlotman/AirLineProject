@@ -16,12 +16,6 @@ namespace AirLineProject.Model
             this.FlightList = new List<Flight>();
             this.Fleet = new List<Aircraft>();
 
-            AddAirplaneToFleet(120, 2200, false);
-        }
-
-        public void AddAirplaneToFleet(int capacity, int range, bool maintstatus)
-        {
-            Fleet.Add(new Aircraft(capacity, range, maintstatus));
         }
         public void NewFlight(Aircraft aircraft, int flightnumber, string origin, string destination)
         {

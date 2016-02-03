@@ -8,19 +8,19 @@ namespace AirLineProject
 {
     public class Aircraft
     {
+        public string AircraftID;
         public int Capacity;
         public int Range;
         public bool MaintinanceStatus;
         public List<Flight> Schedule;
 
-        public Aircraft(int capacity, int range, bool maintenanceStatus)
+        public Aircraft(string aircraftID,int capacity, int range, bool maintenanceStatus)
         {
+            this.AircraftID = aircraftID;
             this.Capacity = capacity;
             this.Range = range;
             this.MaintinanceStatus = maintenanceStatus;
             Schedule = new List<Flight>();
-
         }
-
     }
 }
