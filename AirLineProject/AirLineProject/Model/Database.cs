@@ -28,7 +28,7 @@ namespace AirLineProject.Model
             }
             else if (aircraft.MaintinanceStatus == true)
             {
-                throw new Exception("The Aircraft Specified for flight is currently undergoing maintinance.");
+                throw new Exception("The Aircraft Specified for flight is currently undergoing maintenance.");
 
             }
         }
