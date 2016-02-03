@@ -3,8 +3,8 @@
   <Class Name="AirLineProject.Aircraft">
     <Position X="7.75" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAAAAAAADAEAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Model\Aircraft.cs</FileName>
+      <HashCode>AAAAAAAAAAAACIAAAAAAAAADAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\Aircraft.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AirLineProject.App" Collapsed="true">
@@ -17,8 +17,8 @@
   <Class Name="AirLineProject.Flight">
     <Position X="4" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>ACAAAAAAAAAAAAAAAAAACAAAACAAAgAEAAAAAAgAAAA=</HashCode>
-      <FileName>Model\Flight.cs</FileName>
+      <HashCode>ACAAAAAAAAAAAAAABAAAAAAAACAAAgAEAAAAAAgAABA=</HashCode>
+      <FileName>ViewModel\Flight.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AirLineProject.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
@@ -33,7 +33,7 @@
     <Position X="6" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAgAQ=</HashCode>
-      <FileName>Model\Passenger.cs</FileName>
+      <FileName>ViewModel\Passenger.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AirLineProject.Properties.Resources" Collapsed="true">

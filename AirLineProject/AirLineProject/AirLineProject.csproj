@@ -55,8 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\Database.cs" />
-    <Compile Include="Model\Fleet.cs" />
+    <Compile Include="ViewModel\Database.cs" />
+    <Compile Include="ViewModel\Fleet.cs" />
     <Compile Include="SampleData\Prices\Prices.xaml.cs">
       <DependentUpon>Prices.xaml</DependentUpon>
     </Compile>
@@ -67,8 +67,8 @@
       <DependentUpon>SeatsSample.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\AirLineViewModel.cs" />
-    <Compile Include="Model\Seat.cs" />
-    <Compile Include="Model\SeatingChart.cs" />
+    <Compile Include="ViewModel\Seat.cs" />
+    <Compile Include="ViewModel\SeatingChart.cs" />
     <Page Include="SampleData\Prices\Prices.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -85,18 +85,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Model\Aircraft.cs" />
+    <Compile Include="ViewModel\Aircraft.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Model\Flight.cs" />
+    <Compile Include="ViewModel\Flight.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Passenger.cs" />
+    <Compile Include="ViewModel\Passenger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -128,6 +128,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Model\" />
     <Folder Include="SampleData\SampleDataSource1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
