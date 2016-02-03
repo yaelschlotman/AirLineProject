@@ -10,7 +10,7 @@ namespace AirLineProject.Model
     {
         public List<Flight> FlightList;
         public List<Aircraft> Fleet;
-        
+
 
         public Database()
         {
@@ -19,6 +19,5 @@ namespace AirLineProject.Model
 
         }
 
-        }
     }
 }
