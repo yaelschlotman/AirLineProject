@@ -11,15 +11,15 @@ namespace AirLineProject
         public string AircraftID;
         public int Capacity;
         public int Range;
-        public bool MaintinanceStatus;
+        public bool IsAircraftUndergoingMaintinance;
         public List<Flight> Schedule;
 
-        public Aircraft(string aircraftID,int capacity, int range, bool maintenanceStatus)
+        public Aircraft(string aircraftID,int capacity, int range, bool IsAircraftUndergoingMaintinance)
         {
             this.AircraftID = aircraftID;
             this.Capacity = capacity;
             this.Range = range;
-            this.MaintinanceStatus = maintenanceStatus;
+            this.IsAircraftUndergoingMaintinance = IsAircraftUndergoingMaintinance;
             Schedule = new List<Flight>();
         }
     }

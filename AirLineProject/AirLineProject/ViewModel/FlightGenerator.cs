@@ -8,9 +8,9 @@ namespace AirLineProject.Model
 
         private Flight NewFlight(Aircraft aircraft, int flightnumber, string origin, string destination)
         {
-            switch (aircraft.MaintinanceStatus)
+            switch (aircraft.IsAircraftUndergoingMaintinance)
             {
-                case false:
+                case (false):
                     {
                         Flight flight = new Flight(aircraft, flightnumber, origin, destination);
                         aircraft.Schedule.Add(flight);
