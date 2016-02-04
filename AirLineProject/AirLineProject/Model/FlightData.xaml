@@ -1,0 +1,14 @@
+<FlightData:FlightDataSource xmlns:FlightData="clr-namespace:AirLineProject">
+	<FlightData:FlightDataSource.Flight_Data>
+		<FlightData:Flight_DataItem Flight_Number="0102" Origin="Chicago" Destination="NewYork"/>
+		<FlightData:Flight_DataItem Flight_Number="0103" Origin="Chicago" Destination="Miami"/>
+		<FlightData:Flight_DataItem Flight_Number="0104" Origin="Chicago" Destination="San Francisco"/>
+		<FlightData:Flight_DataItem Flight_Number="0201" Origin="New York" Destination="Chicago"/>
+		<FlightData:Flight_DataItem Flight_Number="0203" Origin="New York" Destination="Miami"/>
+		<FlightData:Flight_DataItem Flight_Number="0204" Origin="New York" Destination="San Francisco"/>
+		<FlightData:Flight_DataItem Flight_Number="0302" Origin="Miami" Destination="NewYork"/>
+		<FlightData:Flight_DataItem Flight_Number="0204" Origin="Miami" Destination="San Francisco"/>
+		<FlightData:Flight_DataItem Flight_Number="0201" Origin="Miami" Destination="Chicago"/>
+		
+	</FlightData:FlightDataSource.Flight_Data>
+</FlightData:FlightDataSource>
