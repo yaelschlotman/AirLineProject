@@ -12,8 +12,9 @@ namespace AirLineProject.Model
         {
             return (new Aircraft(aircraftID, capacity, range, maintstatus));
         }
-        public void BuildInitalFleet(List<Aircraft> fleet)
+        public List<Aircraft> BuildInitalFleet()
         {
+            List < Aircraft > fleet = new List<Aircraft>(); 
             fleet.Add(GenerateAirlplane("A01", 240, 4000, false));
             fleet.Add(GenerateAirlplane("A02", 240, 4000, true));
             fleet.Add(GenerateAirlplane("A03", 180, 3500, true));
@@ -24,6 +25,8 @@ namespace AirLineProject.Model
             fleet.Add(GenerateAirlplane("A08", 180, 4000, true));
             fleet.Add(GenerateAirlplane("A09", 240, 3500, true));
             fleet.Add(GenerateAirlplane("A10", 180, 3500, false));
+
+            return fleet;
         }        
     }
 }

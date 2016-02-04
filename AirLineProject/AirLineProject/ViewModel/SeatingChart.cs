@@ -19,8 +19,8 @@ namespace AirLineProject
             SeatLetters.Add("D");
             SeatLetters.Add("E");
             SeatLetters.Add("F");
-        }        
-        public SeatingChart(int numberofrows, int rowwidth)
+        }
+        public List<Seat> GenerateSeatingChart(int numberofrows, int rowwidth)
         {
             AddLettersToSeatList();
             for (int i = 1; i <= numberofrows; i++)
@@ -30,6 +30,7 @@ namespace AirLineProject
                     SeatList.Add(new Seat(i, SeatLetters[x]));
                 }
             }
+            return SeatList;
         }
     }
 }

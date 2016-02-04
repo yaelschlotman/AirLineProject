@@ -69,6 +69,8 @@
       <DependentUpon>SeatsSample.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\AirLineViewModel.cs" />
+    <Compile Include="ViewModel\FlightDataSource.cs" />
+    <Compile Include="ViewModel\FlightGenerator.cs" />
     <Compile Include="ViewModel\Seat.cs" />
     <Compile Include="ViewModel\SeatingChart.cs" />
     <Page Include="SampleData\Prices\Prices.xaml">
