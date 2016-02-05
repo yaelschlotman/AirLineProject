@@ -36,5 +36,17 @@ namespace AirLineProject
         {
 
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            FileWriter filewriter = new FileWriter();
+
+            string PassengerInfo = (Environment.NewLine + this.textBox.Text + " is on flight " + this.listBox.SelectedItem.ToString() + " and is assigned to seat " + this.listBox1.SelectedItem.ToString());
+            filewriter.Print(PassengerInfo, "PassengerInfo.txt");
+            this.Close();
+            MessageBox.Show(PassengerInfo);
+
+            
+    }
     }
 }

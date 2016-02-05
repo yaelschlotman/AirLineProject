@@ -66,6 +66,10 @@ namespace AirLineProject
         {
             PassengerManifest.Add(passenger);
         }
+        public override string ToString()
+        {
+            return (FlightNumber.ToString() + " from " + Origin + " to " + Destination);
+        }
     }
 
 }

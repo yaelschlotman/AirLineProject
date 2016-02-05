@@ -57,7 +57,6 @@
     </ApplicationDefinition>
     <Compile Include="Model\FileReader.cs" />
     <Compile Include="Model\FileWriter.cs" />
-    <Compile Include="Model\ReadURI.cs" />
     <Compile Include="ViewModel\Database.cs" />
     <Compile Include="ViewModel\Fleet.cs" />
     <Compile Include="ViewModel\FlightGenerator.cs" />
@@ -106,15 +105,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SampleData\Prices\" />
-    <Folder Include="SampleData\SampleDataSource1\" />
-    <Folder Include="SampleData\SampleDataSource\" />
-    <Folder Include="SampleData\SeatsSample\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Model\PassengerInfo.txt" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -27,15 +27,15 @@ namespace AirLineProject.Model
         {
             List<Flight> flights = new List<Flight>();
 
-            flights.Add(NewFlight(fleet[3], 240, "Chicago", "New York"));
-            flights.Add(NewFlight(fleet[1], 240, "Chicago", "Miami"));
-            flights.Add(NewFlight(fleet[2], 180, "Chicago", "San Francisco"));
-            flights.Add(NewFlight(fleet[3], 180, "New York", "Chicago"));
-            flights.Add(NewFlight(fleet[4], 180, "New York", "Miami"));
-            flights.Add(NewFlight(fleet[5], 240, "New York", "San Francisco"));
-            flights.Add(NewFlight(fleet[6], 180, "Miami", "New York"));
-            flights.Add(NewFlight(fleet[7], 240, "Miami", "San Francisco"));
-            flights.Add(NewFlight(fleet[8], 180, "Miami", "Chicago"));
+            flights.Add(NewFlight(fleet[3], 0102, "Chicago", "New York"));
+            flights.Add(NewFlight(fleet[1], 0103, "Chicago", "Miami"));
+            flights.Add(NewFlight(fleet[2], 0104, "Chicago", "San Francisco"));
+            flights.Add(NewFlight(fleet[3], 0201, "New York", "Chicago"));
+            flights.Add(NewFlight(fleet[4], 0203, "New York", "Miami"));
+            flights.Add(NewFlight(fleet[5], 0204, "New York", "San Francisco"));
+            flights.Add(NewFlight(fleet[6], 0302, "Miami", "New York"));
+            flights.Add(NewFlight(fleet[7], 0304, "Miami", "San Francisco"));
+            flights.Add(NewFlight(fleet[8], 0301, "Miami", "Chicago"));
 
             return flights;
         }

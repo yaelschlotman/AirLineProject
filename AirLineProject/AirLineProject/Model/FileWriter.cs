@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace AirLineProject.Model
 {
-    class FileWriter
+    public class FileWriter
     {
         public FileWriter()
         {
@@ -16,11 +16,13 @@ namespace AirLineProject.Model
 
         public void Print(string Message, string filename)
         {
-            string file_name = filename;
+            FileStream filestream;
+            filestream = new FileStream(filename, FileMode.Append, FileAccess.Write);
             StreamWriter fileWrite;
-            fileWrite = new StreamWriter(file_name);
+            fileWrite = new StreamWriter(filestream);
             fileWrite.Write(Message);
-            fileWrite.Close();           
+            fileWrite.Close();
+            filestream.Close();       
         }
     }
 }
