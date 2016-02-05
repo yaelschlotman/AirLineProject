@@ -16,6 +16,7 @@ namespace AirLineProject
 
         public Flight(Aircraft aircraft, int flightnumber, string origin, string destination)
         {
+            this.Aircraft = aircraft;
             this.FlightNumber = flightnumber;
             this.Origin = origin;
             this.Destination = destination;
@@ -25,11 +26,46 @@ namespace AirLineProject
         public Flight()
         {
         }
-
-    }
-    /*public void AddPassengerToManifest()
+        public int _flightnumber
         {
-           // PassengerManifest.Add();e
-        }*/
+            get
+            {
+                return FlightNumber;
+            }
+        }
+        public String _origin
+        {
+            get
+            {
+                return Origin;
+            }
+        }
+        public string _destination
+        {
+            get
+            {
+                return Destination;
+            }
+        }
+        public List<Passenger> _passengermanifest
+        {
+            get
+            {
+                return PassengerManifest;
+            }
+        }
+        public Aircraft _aircraft
+        {
+            get
+            {
+                return Aircraft;
+            }
+        }
+
+        public void AddPassengerToManifest (Passenger passenger)
+        {
+            PassengerManifest.Add(passenger);
+        }
+    }
 
 }

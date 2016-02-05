@@ -10,16 +10,25 @@ namespace AirLineProject
     {
         string SeatLetter;
         int RowNumber;
+        string SeatID;
 
         public Seat(int rownumber, string seatletter)
         {
             this.RowNumber = rownumber;
             this.SeatLetter = seatletter;
+            this.SeatID = (RowNumber.ToString() + seatletter);
         }
 
         public override string ToString()
         {
-            return (RowNumber.ToString() + SeatLetter);
+            return SeatID;
+        }
+        public string _seatid
+        {
+            get
+            {
+                return SeatID;
+            }
         }
     }
 }

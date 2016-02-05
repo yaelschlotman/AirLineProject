@@ -8,13 +8,13 @@ namespace AirLineProject.Model
 {
     public class Database
     {
-        public List<Flight> FlightList;
-        public List<Aircraft> Fleet;
-        public List<Seat> SeatingList;
-        public int Price;
-        public Fleet fleet = new Fleet();
-        public SeatingChart seatingchart = new SeatingChart();
-        public FlightGenerator flightgenerator = new FlightGenerator();
+        private List<Flight> FlightList;
+        private List<Aircraft> Fleet;
+        private List<Seat> SeatingList;
+        private int Price;
+        private Fleet fleet = new Fleet();
+        private SeatingChart seatingchart = new SeatingChart();
+        private FlightGenerator flightgenerator = new FlightGenerator();
 
 
         public Database()
@@ -27,6 +27,33 @@ namespace AirLineProject.Model
             Fleet = fleet.BuildInitalFleet();
             FlightList = flightgenerator.BuildInitalFlightList(Fleet);
         }
-
+        public List<Flight> _flightlist
+        {
+            get
+            {
+                return FlightList;
+            }
+        }
+        public List<Aircraft> _fleet
+        {
+            get
+            {
+                return Fleet;
+            }
+        }
+        public List<Seat> _seatingchart
+        {
+            get
+            {
+                return SeatingList;
+            }
+        }
+        public int _price
+        {
+            get
+            {
+                return Price;
+            }
+        }
     }
 }

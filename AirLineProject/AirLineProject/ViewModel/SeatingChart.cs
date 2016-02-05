@@ -8,8 +8,8 @@ namespace AirLineProject
 {
     public class SeatingChart
     {
-        public List<Seat> SeatList = new List<Seat>();
-        public List<string> SeatLetters = new List<string>();
+        private List<Seat> SeatList = new List<Seat>();
+        private List<string> SeatLetters = new List<string>();
 
         public void AddLettersToSeatList()
         {

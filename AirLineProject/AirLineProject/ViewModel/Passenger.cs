@@ -12,5 +12,36 @@ namespace AirLineProject
         string SeatAssignment;
         Flight Flight;
 
+        public Passenger(string name, string seatassignment, Flight flight)
+        {
+            this.Name = name;
+            this.SeatAssignment = seatassignment;
+            this.Flight = flight;
+        }
+        public string _name
+        {
+            get
+            {
+                return Name;
+            }
+            set
+            {
+                Name = value;
+            }
+        }
+        public string _seatassignment
+        {
+            get
+            {
+                return SeatAssignment;
+            }
+        }
+        public Flight _flight
+        {
+            get
+            {
+                return Flight;
+            }
+        }
     }
 }

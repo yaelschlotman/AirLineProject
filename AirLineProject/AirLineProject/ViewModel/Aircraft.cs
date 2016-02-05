@@ -8,9 +8,9 @@ namespace AirLineProject
 {
     public class Aircraft
     {
-        public string AircraftID;
-        public int Capacity;
-        public int Range;
+        private string AircraftID;
+        private int Capacity;
+        private int Range;
         public bool IsAircraftUndergoingMaintinance;
         public List<Flight> Schedule;
 
@@ -22,5 +22,34 @@ namespace AirLineProject
             this.IsAircraftUndergoingMaintinance = IsAircraftUndergoingMaintinance;
             Schedule = new List<Flight>();
         }
+        public string _aircraftid
+        {
+            get
+            {
+                return AircraftID;
+            }
+        }
+        public int _capacity
+        {
+            get
+            {
+                return Capacity;
+            }
+        }
+        public int _range
+        {
+            get
+            {
+                return Range;
+            }
+        }
+        public List<Flight> _schedule
+        {
+            get
+            {
+                return Schedule;
+            }
+        }
+
     }
 }
