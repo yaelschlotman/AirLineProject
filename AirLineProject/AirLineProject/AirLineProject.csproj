@@ -60,30 +60,9 @@
     <Compile Include="Model\ReadURI.cs" />
     <Compile Include="ViewModel\Database.cs" />
     <Compile Include="ViewModel\Fleet.cs" />
-    <Compile Include="SampleData\Prices\Prices.xaml.cs">
-      <DependentUpon>Prices.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SampleData\SampleDataSource\SampleDataSource.xaml.cs">
-      <DependentUpon>SampleDataSource.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SampleData\SeatsSample\SeatsSample.xaml.cs">
-      <DependentUpon>SeatsSample.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ViewModel\FlightGenerator.cs" />
     <Compile Include="ViewModel\Seat.cs" />
     <Compile Include="ViewModel\SeatingChart.cs" />
-    <Page Include="SampleData\Prices\Prices.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="SampleData\SampleDataSource\SampleDataSource.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="SampleData\SeatsSample\SeatsSample.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -123,15 +102,15 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="SampleData\Prices\Prices.xsd" />
-    <None Include="SampleData\SampleDataSource\SampleDataSource.xsd" />
-    <None Include="SampleData\SeatsSample\SeatsSample.xsd" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="SampleData\Prices\" />
     <Folder Include="SampleData\SampleDataSource1\" />
+    <Folder Include="SampleData\SampleDataSource\" />
+    <Folder Include="SampleData\SeatsSample\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Model\PassengerInfo.txt" />

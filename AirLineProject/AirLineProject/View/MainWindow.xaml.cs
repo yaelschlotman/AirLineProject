@@ -27,6 +27,9 @@ namespace AirLineProject
         public MainWindow()
         {
             InitializeComponent();
+            Database database = new Database();
+
+            DataContext = database;
         }
 
         private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
