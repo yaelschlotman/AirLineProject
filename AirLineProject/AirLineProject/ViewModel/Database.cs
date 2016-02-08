@@ -12,13 +12,13 @@ namespace AirLineProject.Model
         private List<Flight> FlightList;
         private List<Aircraft> Fleet;
         private List<Seat> SeatingList;
-        private List<String> Prices;
+        private String Price;
         private Fleet fleet = new Fleet();
         private SeatingChart seatingchart = new SeatingChart();
         private FlightGenerator flightgenerator = new FlightGenerator();
         public Database()
         {
-            this.Prices = new List<string>() { "$150.00" };
+            this.Price = "$150.00";
             this.FlightList = new List<Flight>();
             this.Fleet = new List<Aircraft>();
             this.SeatingList = seatingchart.GenerateSeatingChart(9, 6);
@@ -47,11 +47,11 @@ namespace AirLineProject.Model
                 return SeatingList;
             }
         }
-        public List<string> _prices
+        public string _prices
         {
             get
             {
-                return Prices;
+                return Price;
             }
         }
     }

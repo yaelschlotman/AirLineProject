@@ -32,21 +32,27 @@ namespace AirLineProject
             DataContext = database;
         }
 
-        private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
         private void button_Click(object sender, RoutedEventArgs e)
         {
             FileWriter filewriter = new FileWriter();
+            int textBoxCharacterCount;
 
-            string PassengerInfo = (Environment.NewLine + this.textBox.Text + " is on flight " + this.listBox.SelectedItem.ToString() + " and is assigned to seat " + this.listBox1.SelectedItem.ToString());
-            filewriter.Print(PassengerInfo, "PassengerInfo.txt");
-            this.Close();
-            MessageBox.Show(PassengerInfo);
+            textBoxCharacterCount = this.textBox.GetLineLength(0);  
 
-            
+            if (textBoxCharacterCount == 0 || this.listBox.SelectedItem == null || this.listBox1.SelectedItem == null)
+            {
+                MessageBox.Show("Please Select a flight, seat, and enter your name prior to submitting this form.");
+            }
+            else
+            {
+                string PassengerInfo = (Environment.NewLine + this.textBox.Text + " is on flight " + this.listBox.SelectedItem.ToString() + " and is assigned to seat " + this.listBox1.SelectedItem.ToString());
+                filewriter.Print(PassengerInfo, "PassengerInfo.txt");
+                this.Close();
+                MessageBox.Show(PassengerInfo);
+            }
+
+                  
     }
+
     }
 }

@@ -329,21 +329,47 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <DataTemplate x:Key="StringTemplate1">
+            <StackPanel>
+                <TextBlock Text="{Binding Mode=OneWay}"/>
+            </StackPanel>
+        </DataTemplate>
+        <Style x:Key="LabelStyle1" TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Top"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Label}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="true">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Height="Auto" Width="Auto"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
-    <Grid d:DataContext="{d:DesignData /SampleData/FlightSampleData.xaml}">
+    <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="218*"/>
             <ColumnDefinition Width="37*"/>
             <ColumnDefinition Width="72*"/>
             <ColumnDefinition Width="190*"/>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="listBox" RenderTransformOrigin="-0.374,-0.162" ItemsPanel="{DynamicResource WrapFlightList}" Style="{DynamicResource ListBoxStyle1}" ItemTemplate="{DynamicResource FlightTemplate3}" Margin="0,0,43,0" d:LayoutOverrides="TopMargin, BottomMargin" d:DataContext="{Binding FlightList, Mode=OneWay}" SelectionChanged="listBox_SelectionChanged" ItemsSource="{Binding _flightlist, Source={StaticResource DatabaseDataSource}}"/>
+        <ListBox x:Name="listBox" RenderTransformOrigin="-0.374,-0.162" ItemsPanel="{DynamicResource WrapFlightList}" Style="{DynamicResource ListBoxStyle1}" ItemTemplate="{DynamicResource FlightTemplate3}" Margin="0,0,43,0" d:LayoutOverrides="TopMargin, BottomMargin" d:DataContext="{Binding FlightList, Mode=OneWay}"  ItemsSource="{Binding _flightlist, Source={StaticResource DatabaseDataSource}}"/>
         <ListBox x:Name="listBox1" Grid.Column="1" Margin="-38,40,0,77" ItemsPanel="{DynamicResource ItemsPanelTemplate1}" ItemTemplate="{DynamicResource SeatTemplate}" ItemsSource="{Binding _seatingchart, Source={StaticResource DatabaseDataSource}}" Style="{DynamicResource ListBoxStyle2}" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="textBox" Grid.Column="3" Height="23" Margin="36,0,34,95" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="textBox" Grid.Column="3" Height="23" Margin="36,0,34,95" TextWrapping="Wrap" VerticalAlignment="Bottom" />
         <Button x:Name="button" Content="Purchase" Grid.Column="3" Margin="58,0,57,57" VerticalAlignment="Bottom" Style="{DynamicResource ButtonStyle1}" IsEnabled="{Binding IsEnabled, ElementName=textBox, FallbackValue=false, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Click="button_Click" />
-        <ListBox x:Name="listBox2" Grid.Column="3" Margin="40.98,99,34,0" ItemTemplate="{DynamicResource StringTemplate}" ItemsSource="{Binding _prices}" ItemsPanel="{DynamicResource ItemsPanelTemplate2}" Style="{DynamicResource ListBoxStyle3}" SelectedIndex="{Binding _price, Mode=OneWay, Source={StaticResource DatabaseDataSource}}" DataContext="{Binding Source={StaticResource DatabaseDataSource}}" FontSize="26.667" Height="44" VerticalAlignment="Top"/>
         <Label x:Name="label" Content="Customer Name" Grid.Column="3" Margin="40.98,0,45.91,119.04" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold" Width="103.11"/>
         <Label x:Name="label1" Content="Price" Grid.Column="3" HorizontalAlignment="Right" Margin="0,68,70.006,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="label2" Content="{Binding _prices, Mode=OneWay}" Grid.Column="3" Margin="48.354,93,45.91,0" DataContext="{Binding Source={StaticResource DatabaseDataSource}}" VerticalAlignment="Top" Style="{DynamicResource LabelStyle1}" FontSize="20" Height="40.46" HorizontalAlignment="Center"/>
 
     </Grid>
 </Window>
