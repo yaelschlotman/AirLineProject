@@ -10,7 +10,6 @@ namespace AirLineProject
     {
         private List<Seat> SeatList = new List<Seat>();
         private List<string> SeatLetters = new List<string>();
-
         public void AddLettersToSeatList()
         {
             SeatLetters.Add("A");

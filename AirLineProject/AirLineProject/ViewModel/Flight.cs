@@ -12,7 +12,7 @@ namespace AirLineProject
         int FlightNumber;
         string Origin;
         string Destination;
-        List<Passenger> PassengerManifest;
+
 
         public Flight(Aircraft aircraft, int flightnumber, string origin, string destination)
         {
@@ -20,9 +20,7 @@ namespace AirLineProject
             this.FlightNumber = flightnumber;
             this.Origin = origin;
             this.Destination = destination;
-            PassengerManifest = new List<Passenger>();
         }
-
         public Flight()
         {
         }
@@ -47,24 +45,12 @@ namespace AirLineProject
                 return Destination;
             }
         }
-        public List<Passenger> _passengermanifest
-        {
-            get
-            {
-                return PassengerManifest;
-            }
-        }
         public Aircraft _aircraft
         {
             get
             {
                 return Aircraft;
             }
-        }
-
-        public void AddPassengerToManifest (Passenger passenger)
-        {
-            PassengerManifest.Add(passenger);
         }
         public override string ToString()
         {

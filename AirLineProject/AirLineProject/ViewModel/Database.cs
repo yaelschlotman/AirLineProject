@@ -9,8 +9,6 @@ namespace AirLineProject.Model
 {
     public class Database
     {
-        
-
         private List<Flight> FlightList;
         private List<Aircraft> Fleet;
         private List<Seat> SeatingList;
@@ -18,7 +16,6 @@ namespace AirLineProject.Model
         private Fleet fleet = new Fleet();
         private SeatingChart seatingchart = new SeatingChart();
         private FlightGenerator flightgenerator = new FlightGenerator();
-
         public Database()
         {
             this.Prices = new List<string>() { "$150.00" };
@@ -57,6 +54,5 @@ namespace AirLineProject.Model
                 return Prices;
             }
         }
-
     }
 }

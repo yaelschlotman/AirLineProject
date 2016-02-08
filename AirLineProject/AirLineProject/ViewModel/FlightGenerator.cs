@@ -5,7 +5,6 @@ namespace AirLineProject.Model
 {
     public class FlightGenerator
     {
-
         private Flight NewFlight(Aircraft aircraft, int flightnumber, string origin, string destination)
         {
             switch (aircraft.IsAircraftUndergoingMaintinance)
@@ -22,11 +21,9 @@ namespace AirLineProject.Model
                     }
             }
         }
-
         public List<Flight> BuildInitalFlightList(List<Aircraft> fleet)
         {
             List<Flight> flights = new List<Flight>();
-
             flights.Add(NewFlight(fleet[3], 0102, "Chicago", "New York"));
             flights.Add(NewFlight(fleet[1], 0103, "Chicago", "Miami"));
             flights.Add(NewFlight(fleet[2], 0104, "Chicago", "San Francisco"));
@@ -36,7 +33,6 @@ namespace AirLineProject.Model
             flights.Add(NewFlight(fleet[6], 0302, "Miami", "New York"));
             flights.Add(NewFlight(fleet[7], 0304, "Miami", "San Francisco"));
             flights.Add(NewFlight(fleet[8], 0301, "Miami", "Chicago"));
-
             return flights;
         }
     }

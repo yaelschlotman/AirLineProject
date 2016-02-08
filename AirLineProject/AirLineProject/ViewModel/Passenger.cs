@@ -11,7 +11,6 @@ namespace AirLineProject
         string Name;
         string SeatAssignment;
         Flight Flight;
-
         public Passenger(string name, string seatassignment, Flight flight)
         {
             this.Name = name;

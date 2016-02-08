@@ -13,7 +13,6 @@ namespace AirLineProject
         private int Range;
         public bool IsAircraftUndergoingMaintinance;
         public List<Flight> Schedule;
-
         public Aircraft(string aircraftID,int capacity, int range, bool IsAircraftUndergoingMaintinance)
         {
             this.AircraftID = aircraftID;
@@ -50,6 +49,5 @@ namespace AirLineProject
                 return Schedule;
             }
         }
-
     }
 }

@@ -15,16 +15,16 @@ namespace AirLineProject.Model
         public List<Aircraft> BuildInitalFleet()
         {
             List < Aircraft > fleet = new List<Aircraft>(); 
-            fleet.Add(GenerateAirlplane("A01", 240, 4000, true));
-            fleet.Add(GenerateAirlplane("A02", 240, 4000, false));
-            fleet.Add(GenerateAirlplane("A03", 180, 3500, false));
-            fleet.Add(GenerateAirlplane("A04", 180, 3500, false));
-            fleet.Add(GenerateAirlplane("A05", 180, 3500, false));
-            fleet.Add(GenerateAirlplane("A06", 240, 3500, false));
-            fleet.Add(GenerateAirlplane("A07", 180, 3500, false));
-            fleet.Add(GenerateAirlplane("A08", 180, 4000, false));
-            fleet.Add(GenerateAirlplane("A09", 240, 3500, false));
-            fleet.Add(GenerateAirlplane("A10", 180, 3500, true));
+            fleet.Add(GenerateAirlplane("A01", 54, 4000, true));
+            fleet.Add(GenerateAirlplane("A02", 54, 4000, false));
+            fleet.Add(GenerateAirlplane("A03", 54, 3500, false));
+            fleet.Add(GenerateAirlplane("A04", 54, 3500, false));
+            fleet.Add(GenerateAirlplane("A05", 54, 3500, false));
+            fleet.Add(GenerateAirlplane("A06", 54, 3500, false));
+            fleet.Add(GenerateAirlplane("A07", 54, 3500, false));
+            fleet.Add(GenerateAirlplane("A08", 54, 4000, false));
+            fleet.Add(GenerateAirlplane("A09", 54, 3500, false));
+            fleet.Add(GenerateAirlplane("A10", 54, 3500, true));
 
             return fleet;
         }        
